@@ -29,8 +29,8 @@ class Profile(models.Model):
 
 class Image(models.Model):
   image = models.ImageField(blank=True, upload_to='photos/')
-  image_name = models.CharField(max_length = 60)
-  image_caption = models.CharField(max_length = 60)
+  image_name = models.CharField(max_length = 61)
+  image_caption = models.CharField(max_length = 61l)
   posted_at = models.DateTimeField(auto_now_add=True)
   likes = models.ManyToManyField(User, blank=True, related_name='likes')
   slug = models.SlugField()
