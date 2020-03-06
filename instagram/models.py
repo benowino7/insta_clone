@@ -59,3 +59,5 @@ class Image(models.Model):
     return self.image.url
 
 
+# cls methode: states that the methode is for the same class
+#self specifies that the methode is of the class instance

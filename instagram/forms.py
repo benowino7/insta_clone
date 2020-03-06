@@ -14,3 +14,5 @@ class NewPostForm(forms.ModelForm):
   class Meta:
     model = Image
     exclude=['likes', 'slug','profile', 'posted_at']
+
+    # class meta:defines such things as available permissions, associated database table name, whether the model is abstract or not, singular and plural versions of the name.
