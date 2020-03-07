@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect, render_to_response, get_object_or
 from django.utils.encoding import force_bytes, force_text
 from django.utils.http import urlsafe_base64_encode
 from django.template.loader import render_to_string
-from .forms import SignUpForm, NewPostForm
+from .forms import SignUpForm, NewPostForm,CommentForm
 from .tokens import account_activation_token
 from django.contrib.auth import login
 from django.contrib.auth.models import User
@@ -103,3 +103,20 @@ def like(request):
 
   info = {'likes_count':post.get_likes()}
   return HttpResponse(json.dumps(info), content_type='application/json')
+
+@login_required(login_url='/accounts/login/')
+def comment(request,image_id):
+   current_user=request.user
+   if request.method=='POST':
+       image_detail=Image.objects.filter(id=image_id).first()
+
+       form=CommentForm(request.POST,request.FILES)
+       if form.is_valid():
+           comment=form.save(commit=False)
+           comment.posted_by=current_user
+           comment.comment_pic=image_detail
+           comment.save()
+       return redirect('image')
+   else:
+       form=CommentForm()
+   return render(request,'comment.html',{"form":form,"image_id":image_id})

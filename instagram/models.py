@@ -8,6 +8,7 @@ class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
   bio = models.TextField(default='Single and ready to mingle', max_length=500, blank=True)
   photo = models.ImageField(default='profile.jpg', upload_to='photos/')
+  name = models.CharField(max_length=200)
 
   def save_profile(self):
     self.save()
@@ -57,6 +58,14 @@ class Image(models.Model):
 
   def __str__(self):
     return self.image.url
+
+  
+class Comment(models.Model):
+   posted_by=models.ForeignKey(User, on_delete=models.CASCADE,null=True)
+   comment_pic=models.ForeignKey(Image,on_delete=models.CASCADE,null=True)
+   comment=models.CharField(max_length=20,null=True)
+   def __str__(self):
+       return self.posted_by
 
 
 # cls methode: states that the methode is for the same class
