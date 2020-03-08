@@ -6,13 +6,13 @@
 
 This sample contains a Django 2.0.x Instagram Site. The  images are optimized for performance. The Django instagram Sample is responsive and mobile/device friendly.
 
-![Django instagram Sample](./assets/django_photo_gallery_explore.gif)
+![Django instagram Sample](./staticfiles/home.png)
 
 ### Create a profile from the Django admin panel
 
 Albums can be created from the Django admin panel where one zip file with all the images should be selected from the PC. The Django instagram will resize the images to improve the picute load times and will also create thumbnail for every image in the zip.
 
-![Django instagram Sample](./assets/django_photo_gallery_admin.gif)
+![Django instagram Sample](./staticfiles/admin.png)
 
 
 ## Tested with Django / Python
@@ -72,7 +72,7 @@ This Sample illustrates the following concepts on top of the Django Framework:
 - Using photoswipe javascript library for more rich instagram user experience.
 
 ## Control the image size and quality
-The picture size and quality can be controlled programatically from the models.py. Just change the processors. For more information see [django-imagekit](https://github.com/benowino7/thursday-week-1-project).
+The picture size and quality can be controlled programatically from the models.py. Just change the processors. For more information see [django-imagekit](https://github.com/benowino7/instaclone).
 
 ```python
 class AlbumImage(models.Model):
