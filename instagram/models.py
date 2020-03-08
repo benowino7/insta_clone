@@ -36,6 +36,7 @@ class Image(models.Model):
   likes = models.ManyToManyField(User, blank=True, related_name='likes')
   slug = models.SlugField()
   profile = models.ForeignKey(User, on_delete=models.CASCADE, related_name='posts')
+  comments= models.TextField()
 
   def save_image(self):
     self.slug = slugify(self.image_name)
