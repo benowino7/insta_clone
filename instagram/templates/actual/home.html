@@ -15,26 +15,18 @@
       </div>
       <div class="card-body">
         <img class='img-responsive' style="padding-top:10px;width:100%" class="card-img-top" src="{{post.image.url}}" alt="post">
-        <script>
-          $('#like').click(function(){
-            $.ajax({
-              type:'POST',
-              url: "{% url 'like' %}",
-              data: {'slug': $(this).attr('name')},
-              dataType: 'json',
-              success: function(response){
-                alert('Likes Worked');
-                alert('Likes Count ' + response.likes_count);
-              },
-              error: function(rs, e){
-                alert(rs.responseText);
-              }
-            });
-          })
-        </script>
+       
         <h5 style='padding-left:5px;'>{{post.image_caption}}</h5>
         <h6 style='padding-left:5px;'>{{post.posted_at}}</h6>
         <h4 id="like">Likes 1</h4>
+        <p id="result"></p>
+        <form action="#">
+          <label>Comment <input type="text" id="coment"></label>
+          <button id="post" class="btn btn-outline-success">Post</button>
+
+         
+        </form>
+        
       </div>
       <div class="card-footer">
         <!-- comments section -->
@@ -44,4 +36,21 @@
 </div>
 
 {% endfor %}
+<script type="text/javascript">
+  function comm (){
+    document.getElementById('post').addEventListener('click',(e)=>{
+    e.preventDefault();
+    var a = document.getElementById('coment').value;
+    console.log(a);
+    document.getElementById('result').innerHTML = a;
+    alert('successfully posted');
+   
+    
+
+  });
+  
+  return 0;
+  }comm();
+
+  </script>
 {% endblock %}
