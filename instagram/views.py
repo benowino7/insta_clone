@@ -1,10 +1,10 @@
-from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, Http404, HttpResponseRedirect #responce get/post erro handling and page redirection
+from django.contrib.auth.decorators import login_required# authentication
 from django.views.decorators.http import require_POST
 from django.contrib.sites.shortcuts import get_current_site
 from django.shortcuts import render, redirect, render_to_response, get_object_or_404
-from django.utils.encoding import force_bytes, force_text
-from django.utils.http import urlsafe_base64_encode
+from django.utils.encoding import force_bytes, force_text #convarsion and encoding
+from django.utils.http import urlsafe_base64_encode #encription to the base of 64
 from django.template.loader import render_to_string
 from .forms import SignUpForm, NewPostForm,CommentForm
 from .tokens import account_activation_token
