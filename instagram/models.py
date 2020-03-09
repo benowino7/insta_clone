@@ -2,7 +2,7 @@ from django.db import models
 import datetime as dt
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
-
+#a part of a URL which identifies a particular page on a website in a form readable by users-->slugify
 
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
