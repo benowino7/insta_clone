@@ -1,7 +1,9 @@
 import os
 import django_heroku
 import dj_database_url
-from decouple import config, Csv
+from decouple import config,Csv
+#Parameters related to the project, goes straight to the source code. Parameters related to an instance of the project, goes to an environment file
+#Csv reduces the complexity and return other types of data.
 
 MODE=config('MODE', default='dev')
 
