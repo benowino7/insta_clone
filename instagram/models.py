@@ -6,7 +6,7 @@ from django.template.defaultfilters import slugify
 
 class Profile(models.Model):
   user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
-  bio = models.TextField(default='Single and ready to mingle', max_length=500, blank=True)
+  bio = models.TextField(default='Happy to code. Share since its caring', max_length=500, blank=True)
   photo = models.ImageField(default='profile.jpg', upload_to='photos/')
   name = models.CharField(max_length=200)
 

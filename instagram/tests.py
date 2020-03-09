@@ -5,7 +5,7 @@ import datetime as dt
 class ImageTestClass(TestCase):
   
   def setUp(self):
-    self.master = Profile(User='moringaschool', bio='Hello')
+    self.master = Profile(user='moringaschool', bio='Hello')
 
     self.image = Image(image_name='Test Name', image_caption='Test Caption', profile=self.master)
 
@@ -30,7 +30,7 @@ class ImageTestClass(TestCase):
 class ProfileTestClass(TestCase):
 
   def setUp(self):
-    self.master = Profile(User='moringaschool', bio='Hello')
+    self.master = Profile(user='moringaschool', bio='Hello')
 
   def tearDown(self):
     Profile.delete_profile()
