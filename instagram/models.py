@@ -71,3 +71,4 @@ class Comment(models.Model):
 
 # cls methode: states that the methode is for the same class
 #self specifies that the methode is of the class instance
+#pk is the attribute that contains the value of the primary key for the model. id is the name of the field created as a primary key by default if none is explicitly specified
